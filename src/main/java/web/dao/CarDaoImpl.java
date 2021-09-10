@@ -15,10 +15,17 @@ public class CarDaoImpl implements CarDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Car> getAllCars() {
-        Session session = sessionFactory.openSession();
+    public List<Car> getAllCars(int count) {
+        List<Car> list = null;
+        try (Session session = sessionFactory.openSession()) {
 
-        List<Car> list = session.createQuery("FROM Car").list();
+            if (count < 5) {
+                list = session.createQuery("FROM Car").setMaxResults(count).list();
+            } else {
+                list = session.createQuery("FROM Car").list();
+            }
+        }
+
         return list;
     }
 }

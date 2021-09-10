@@ -54,10 +54,4 @@ public class AppConfig {
         transactionManager.setSessionFactory(getSessionFactory().getObject());
         return transactionManager;
     }
-
-    @Bean
-    public CarDao getCarDao(){
-        return new CarDaoImpl();
-    }
-
 }

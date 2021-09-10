@@ -7,7 +7,8 @@
 </head>
 <body>
 <div>
-    <table>
+    <h2>Cars list</h2>
+    <table id="example" class="table table-bordered" style="width: 100%">
         <thead>
         <tr>
             <th> Id </th>
@@ -21,10 +22,10 @@
             <td colspan="2"> No Cars Available </td>
         </tr>
         <tr th:each="car : ${cars}">
-            <td><span th:text="${car.getId()}"> Title </span></td>
-            <td><span th:text="${car.getModel()}"> Author </span></td>
-            <td><span th:text="${car.getSeries()}"> Author </span></td>
-            <td><span th:text="${car.getHorsePower()}"> Author </span></td>
+            <td><span th:text="${car.getId()}"> Id </span></td>
+            <td><span th:text="${car.getModel()}"> Model </span></td>
+            <td><span th:text="${car.getSeries()}"> Series </span></td>
+            <td><span th:text="${car.getHorsePower()}"> PowerInHorse </span></td>
         </tr>
         </tbody>
     </table>

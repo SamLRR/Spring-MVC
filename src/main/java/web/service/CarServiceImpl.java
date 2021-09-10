@@ -11,12 +11,12 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService{
 
-    @Qualifier("carDaoImpl")
+//    @Qualifier("carDaoImpl")
     @Autowired
     CarDao carDao;
 
     @Override
-    public List<Car> getAllCars() {
-        return carDao.getAllCars();
+    public List<Car> getAllCars(int count) {
+        return carDao.getAllCars(count);
     }
 }
