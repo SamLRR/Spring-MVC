@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <h2>Cars list</h2>
+    <table id="example" class="table table-bordered" style="width: 100%">
+        <thead>
+        <tr>
+            <th> Id </th>
+            <th> Model </th>
+            <th> Series </th>
+            <th> PowerInHorse </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${cars.empty}">
+            <td colspan="2"> No Cars Available </td>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td><span th:text="${car.getId()}"> Id </span></td>
+            <td><span th:text="${car.getModel()}"> Model </span></td>
+            <td><span th:text="${car.getSeries()}"> Series </span></td>
+            <td><span th:text="${car.getHorsePower()}"> PowerInHorse </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
