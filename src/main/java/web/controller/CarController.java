@@ -10,18 +10,14 @@ import web.service.CarService;
 @Controller
 public class CarController {
 
-    private final CarService carService;
-
     @Autowired
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
+    private CarService carService;
 
     @GetMapping(value = "/cars")
     public String showCars(ModelMap model,
                            @RequestParam(required = false) Integer count) {
 
-        if (count == null || count == 0 || count > 5) {
+        if (count == null || count >= 5) {
             model.addAttribute("cars", carService.getAllCars());
         } else {
             model.addAttribute("cars", carService.getAllCars(count));

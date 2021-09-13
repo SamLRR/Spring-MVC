@@ -9,8 +9,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import web.dao.CarDao;
-import web.dao.CarDaoImpl;
 import web.model.Car;
 
 import javax.sql.DataSource;
